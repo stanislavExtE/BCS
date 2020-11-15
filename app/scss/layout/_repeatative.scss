@@ -1,0 +1,370 @@
+//main styles
+
+.scrollDisabled {
+    overflow: hidden;
+    position: fixed !important;
+    margin-top: 0;
+    width: 100%;
+    z-index: 0;
+
+    @include br-p(992px, min) {
+        padding-right: 17px;
+    }
+
+    .ios {
+        padding-right: 0;
+    }
+
+
+}
+
+.logo img{
+    max-width: 111px;
+}
+
+.main-wrapper {
+    padding: 0 0 0 0;
+    min-width: $min-width;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+
+    &::selection {
+        background-color: $col-7;
+        color: $col-1;
+    }
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff url(../img/modal_bg.jpg) no-repeat center / cover;
+    z-index: 30;
+    flex-direction: column;
+
+    &.shown {
+
+        .close {
+            transform: translate(0);
+            transition: transform .4s;
+
+            i {
+                opacity: 1;
+                transform: rotate(0);
+                transition: opacity .4s .1s, transform .4s;
+            }
+        }
+    }
+}
+
+.wrapper {
+    max-width: $max-width;
+    padding: 0 $wrapper-padd 0 $wrapper-padd;
+    margin: 0 auto;
+    position: relative;
+
+    &_lg {
+        max-width: 1884px;
+    }
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid $col-1;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    min-height: 70px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s .1s;
+        border: 1px solid rgba(255, 255, 255, 0);
+        transform: scale(1.1, 1.3);
+        z-index: 1;
+    }
+
+    &:hover::before {
+        transform: scale(1, 1);
+        opacity: 1;
+        border-color: $col-1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0);
+        transform: scale(.8, .6);
+        z-index: -1;
+    }
+
+    &:hover::after {
+        transform: scale(1, 1);
+        opacity: 1;
+        border-color: $col-1;
+        background-color: $col-1;
+    }
+
+}
+
+
+.input {}
+
+.title {
+    font-size: $f-s-big-md;
+    line-height: 62px;
+    color: $title-color;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: $custom-font-family;
+
+    &_md {}
+
+    &_lg {
+        font-size: $f-s-big-lg;
+        line-height: $lh-big-xl;
+    }
+}
+
+.text {
+    font-size: $f-s-sm;
+    line-height: 26px;
+
+    &_bdr {
+        @include t-shadow(1px, rgba($text-color, .5));
+        color: $base-bg;
+    }
+}
+
+.social {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 8px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $col-4;
+    font-size: 24px;
+    position: relative;
+    transition: $trs;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        transition: $trs;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        z-index: 1;
+        opacity: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transform: scale(1.3, 1.3);
+    }
+
+    &:hover::before {
+        opacity: 1;
+        transform: scale(1, 1);
+        border-color: $col-4;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: $trs;
+        border-radius: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    &:hover::after {
+        transform: scale(0, 0);
+        opacity: 0;
+        border-color: $col-4;
+    }
+
+    &_hover-col-2 {
+
+        &:hover {
+            color: $col-1;
+
+            &:before {
+                border-color: $col-1;
+            }
+        }
+
+
+    }
+
+
+    &-box {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.caption-box {
+    max-width: 476px;
+    line-height: 30px;
+    font-size: $f-s-sm;
+
+    &_align-right {
+        text-align: right;
+        margin-left: auto;
+    }
+
+    a {
+        @include hover-text-anim($t-col-2, rgba($text-color, .5));
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, rgba($text-color, .5), rgba($text-color, .5) 50%, $t-col-2 50%);
+            background-size: 200% 100%;
+            background-position: 100%;
+            transition: $default-transition;
+        }
+
+        &:hover:after {
+            background-position: 0 100%;
+        }
+    }
+}
+
+.close {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(50%, -50%);
+    border-radius: 0 0 0 100%;
+    background: $col-1;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 45px;
+    padding-left: 45px;
+    font-size: 52px;
+    transition: all .3s;
+    cursor: pointer;
+    z-index: 4;
+
+    i {
+        opacity: 0;
+        transition: opacity .2s;
+        transform: rotate(-360deg);
+    }
+
+
+    &-wrapp {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+
+
+        &:hover {
+
+            .close {
+                transform: translate(0);
+
+                i {
+                    opacity: 1;
+                    transform: rotate(0);
+                    transition: opacity .4s .1s, transform .4s;
+                }
+            }
+        }
+
+
+    }
+}
+
+
+.show_md{
+    display: none;
+
+    @include br-p($md){
+        display: block;
+    }
+
+    &_flex{
+        display: none;
+
+        @include br-p($md){
+            display: flex;
+        }
+    }
+}
+
+.hide_md{
+
+    @include br-p($md){
+        display: none;
+    }
+
+}
+
+.show_xs{
+    display: none;
+
+    &_flex{
+        display: none;
+    }
+}

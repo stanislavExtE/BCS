@@ -1,0 +1,70 @@
+/*
+================================================================================
+|                                     FOOTER                                   |
+================================================================================
+*/
+.footer {
+	background: $col-1;
+	color: $text-color;
+	text-align: left;
+	width: 100%;
+	min-width: $min-width;
+	order: 3;
+	-webkit-order: 3;
+	padding: 120px 0px 100px;
+
+	&__container {
+		flex-wrap: wrap;
+		display: flex;
+	}
+
+	&__btn-box {
+		flex: 1 1 calc(50% - 260px);
+		padding-top: 40px;
+	}
+
+	&-btn {
+		font-size: $f-s-big-md;
+		line-height: $lh-big-md;
+		text-transform: uppercase;
+		color: $text-color;
+		display: inline-block;
+		font-family: $custom-font-family;
+
+		font-weight: 800;
+		@include hover-text-anim($text-color, rgba($t-col-3, 1));
+	}
+
+	&__social-box {
+		flex: 0 0 260px;
+		padding: 0px 20px;
+	}
+
+	&__contacts {
+		flex: 1 1 calc(50% - 260px);
+		padding-left: 10%;
+
+		.contact{
+			font-size: 30px;
+			line-height: 40px;
+		}
+
+		&-label{
+			margin-bottom: 25px;
+		}
+	}
+
+	&__logo-box {
+		flex: 0 0 100%;
+		text-align: center;
+		padding-top: 100px;
+		padding-bottom: 5px;
+	}
+
+	&__copyrigths {
+		flex: 0 0 100%;
+		text-align: center;
+		padding: 20px 0;
+font-size: 12px;
+	}
+}

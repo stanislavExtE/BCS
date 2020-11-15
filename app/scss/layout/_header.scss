@@ -1,0 +1,61 @@
+/*
+================================================================================
+|                                     HEADER                                   |
+================================================================================
+*/
+.header {
+	background: $col-1;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+	min-width: $min-width;
+	text-align: left;
+	order: 1;
+	-webkit-order: 1;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 0;
+	}
+
+	&__logo {}
+
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+
+	&__social-box {
+		padding: 0px 20px;
+	}
+
+	&__contacts {
+		.contact{
+			transition: $trs;
+		}
+	}
+}
+
+.contact {
+	font-size: 20px;
+	display: inline-block;
+
+	@include hover-text-anim($text-color, rgba($t-col-3, 1));
+
+	&_hover-col-2{
+		@include hover-text-anim($text-color, rgba($t-col-2, 1));
+	}
+
+	&__breakbox {
+		display: block;
+		font-size: $f-s-xs;
+		line-height: 17px;
+	}
+
+	&-label{
+		margin-bottom: 35px;
+	}
+}
+
